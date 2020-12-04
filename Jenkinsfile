@@ -21,8 +21,8 @@ node() {
     }
   }
   stage('cpiDeployIntegrationDesigntimeArtifact Command') {
-      def status = cpiDeployIntegrationDesigntimeArtifact script: this
-    if (status == null){
+      def statusDeployError = cpiDeployIntegrationDesigntimeArtifact script: this
+    if (statusDeployError == null){
        def error = cpiGetiFlowMplStatus script: this
 	   
 	   if (error == null){
